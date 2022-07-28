@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* //This will make sure that any div you have will default to the flex system, flex is very mobile friendly */
+div{
+  display: flex; 
+}
