@@ -6,6 +6,7 @@ import Home from "../Home/Home";
 import Login from "../Auth/Login";
 import Self from "../Student/Self";
 import Students from "../Student/Students";
+import Navbar from "../Navbar/Navbar";
 
 const AppRouter = () => {
 
@@ -18,9 +19,12 @@ const AppRouter = () => {
     //then we're creating placeholder components
     return (
         <Container>
-            <h1>AppRouter</h1>
+            <Navbar />
+            {/* <h1>AppRouter</h1>  */}
+            {/* this stays unchanged because this is out of route system, it will be displayed regardless of url */}
             <Routes>
-                <Route path = "/" element ={<Home/>}/>
+                {/* which component loads changes depending on url */}
+                <Route path = "/" element ={<Home/>}/> 
                 <Route path = "/login" element ={<Login/>}/>
                 <Route path = "/profile" element ={<Self/>}/>
                 <Route path = "/students" element ={<Students/>}/>

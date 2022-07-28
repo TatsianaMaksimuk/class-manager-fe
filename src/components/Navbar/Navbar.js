@@ -8,7 +8,7 @@ const Navbar = (props) => {
     return (
         <Fragment>
             <div style={{
-                backgroundColor: "#238C72",
+                backgroundColor: "#c2e0ef",
                 position: 'fixed',
                 width: '100%',
                 zIndex: 9999,
@@ -34,16 +34,10 @@ const Navbar = (props) => {
                 }}>
                     {auth.id ? (<p>Hi {auth.name}</p>) : null}
                     <NavButton to="/" label='Home' />
-                    {auth.id ? (
-                        <Fragment>
-                            <NavButton to="/students" label="Directory" />
-                            <NavButton to="/profile" label="Profile" />
-                            <NavButton to="/payfees" label="Payment" />
-                        </Fragment>
-                    ) : (
-                        <NavButton to="/login" label="Login" />
-                    )}
-
+                    <NavButton to="/login" label="Sign in" />
+                    <NavButton to="/profile" label="Profile"/>
+                    <NavButton to="/students" label="All Students"/>
+                    
                 </div>
             </div>
             <div style={{ height: '75px' }} />
