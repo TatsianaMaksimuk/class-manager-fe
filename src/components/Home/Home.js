@@ -7,8 +7,9 @@ import homesplash from "../../assets/homesplash.jpg"
 const Home = () => {
     return (
         <Container>
-            <Splash image={homesplash}>
-            <h1>Welcome to Class Manager</h1>
+            <Splash image={homesplash} style={{color: "#1a2328"}}>
+            <h1 style={{textShadow: "1px 1px #c2e0ef"}}>Welcome to Class Manager</h1>
+            <h2 style ={{textShadow:"1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff,"}}>Schools organized</h2>
             </Splash>
        </Container>
     )
