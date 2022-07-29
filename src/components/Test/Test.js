@@ -23,8 +23,8 @@ const Test = () => {
         // useEffect will trigger this function inside () when the component loads
         //useEffect is not asynchronous
         const getSchools = async () => {
-            const response = await axios.get("http://localhost:8080/api/schools/")
-            console.log(response.data);
+            const res= await axios.get("http://localhost:8080/api/schools/")
+            console.log(res.data);
         }
         getSchools();
 

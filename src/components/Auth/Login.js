@@ -1,5 +1,8 @@
+import axios from 'axios';
 import React, { useState } from "react";
 import Container from "../common/Container";
+import InlineInputContainer from "../common/InlineInputContainer";
+import Input from "../common/Input";
 import LoginForm from "./LoginForm";
 
 //Login component will trap the login data and do the actions: sending login data to backend and getting the user data
@@ -31,13 +34,25 @@ const Login = () => {
         })
     }
 
-    const onSubmit = () => {
-        console.log('submit');
+    const onSubmit = async () => { //async/await means that all other code will continue to run
+        // user will continue to use website, website won't freeze
+        console.log('submit', query.id);
+        const data = query;
+        try {
+            const res = await axios.get(`http://localhost:8080/api/students/${query.id}`)
+            //but all code below this line will continue to wait until upper code is finished
+            alert(`hello ${res.data.name}`)
+        } catch (error) { //if axios call fails
+            console.error(error.response ? error.response.data : error.message)
+            //ternary operator, err.response - condition, if response key exist inside message
+            //display that items data field, otherwise print out error.message
+        }
     }
 
     return (
         <Container>
-            <LoginForm onSubmit={onSubmit}/>
+            <LoginForm onSubmit={onSubmit} query={query} updateForm={updateForm} />
+
         </Container>
     )
 }
