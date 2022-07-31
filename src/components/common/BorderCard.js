@@ -15,7 +15,7 @@ const BorderCard = (props) => {
 
 const styles = {
   card: {
-    border: "1px solid #171717",
+    border: "1px solid #338d74",
     borderRadius: 5,
     margin: '10px',
     padding: '10px',

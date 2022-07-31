@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useContext } from "react"; //hooks
+import { useNavigate } from 'react-router-dom';
 import Container from "../common/Container";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
@@ -24,6 +25,7 @@ const Login = () => {
         password: "",
     })
     const [auth, setAuth] = useContext(AuthContext)
+    const navigate = useNavigate(); //helps us programmaticaly move user 
     
 
     // we updating the form depending on which input field make it change
@@ -46,6 +48,7 @@ const Login = () => {
             //but all code below this line will continue to wait until upper code is finished
            
             setAuth({id: res.data.id, name: res.data.name }) //user info stored in AuthProvider
+            navigate('/');
         } catch (error) { //if axios call fails
             console.error(error.response ? error.response.data : error.message)
             //ternary operator, err.response - condition, if response key exist inside message
