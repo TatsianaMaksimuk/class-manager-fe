@@ -1,9 +1,10 @@
 import axios from 'axios';
-import React, { useState } from "react";
+import React, { useState, useContext } from "react"; //hooks
 import Container from "../common/Container";
 import InlineInputContainer from "../common/InlineInputContainer";
 import Input from "../common/Input";
 import LoginForm from "./LoginForm";
+import {AuthContext} from '../Providers/AuthProvider'
 
 //Login component will trap the login data and do the actions: sending login data to backend and getting the user data
 //This componen will handle the behavior and then we will create an actual login form component that will display the form
@@ -22,6 +23,8 @@ const Login = () => {
         id: "",
         password: "",
     })
+    const [auth, setAuth] = useContext(AuthContext)
+    
 
     // we updating the form depending on which input field make it change
 
@@ -41,7 +44,8 @@ const Login = () => {
         try {
             const res = await axios.get(`http://localhost:8080/api/students/${query.id}`)
             //but all code below this line will continue to wait until upper code is finished
-            alert(`hello ${res.data.name}`)
+           
+            setAuth({id: res.data.id, name: res.data.name }) //user info stored in AuthProvider
         } catch (error) { //if axios call fails
             console.error(error.response ? error.response.data : error.message)
             //ternary operator, err.response - condition, if response key exist inside message

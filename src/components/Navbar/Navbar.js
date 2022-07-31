@@ -32,12 +32,22 @@ const Navbar = (props) => {
                     userSelect: "none",
                     alignItems: 'center',
                 }}>
-                    {auth.id ? (<p>Hi {auth.name}</p>) : null}
+
+                    {auth.id ? (<p>Hi {auth.name}</p>) : null }
+
                     <NavButton to="/" label='Home' />
-                    <NavButton to="/login" label="Sign in" />
-                    <NavButton to="/profile" label="Profile"/>
-                    <NavButton to="/students" label="All Students"/>
-                    
+
+                    {auth.id ? (
+
+                        <Fragment>
+                            < NavButton to="/students" label="All Students" />
+                            <NavButton to="/profile" label="Profile" />
+                        </Fragment>
+
+                    ) :
+                        (<NavButton to="/login" label="Sign in" />)
+                    }
+
                 </div>
             </div>
             <div style={{ height: '75px' }} />
