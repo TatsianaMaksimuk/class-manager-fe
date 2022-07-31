@@ -42,6 +42,7 @@ const Navbar = (props) => {
                         <Fragment>
                             < NavButton to="/students" label="All Students" />
                             <NavButton to="/profile" label="Profile" />
+                            <NavButton to="/payfees" label="Pay Fees" />
                         </Fragment>
 
                     ) :

@@ -7,6 +7,7 @@ import Login from "../Auth/Login";
 import Self from "../Student/Self";
 import Students from "../Student/Students";
 import Navbar from "../Navbar/Navbar";
+import PayFees from "../Student/PayFees";
 
 const AppRouter = () => {
 
@@ -28,6 +29,8 @@ const AppRouter = () => {
                 <Route path = "/login" element ={<Login/>}/>
                 <Route path = "/profile" element ={<Self/>}/>
                 <Route path = "/students" element ={<Students/>}/>
+                <Route path = "/payfees" element ={<PayFees/>}/>
+
 
             </Routes>
         </Container>
