@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+```App Functionality```
+
+### The project includes:
+
+## Home page
+
+## Ability to log in for existing users
+- press a Login button on the right corner of the navigation bar. ID and password are required to login through a login form. Click Submit button when fields of the form are filled out. If the input data is correct, you will be logged in.
+
+## Ability to see the directory
+- All students button is visible after user is logged in. Press All students to see the directory.
+
+## Ability to pay fees
+- Pay Fees button is visible after user is logged in. Press Pay Fees button to proceed with Pay Fees Form. Input amount of fees into the form and press submit.

@@ -17,7 +17,7 @@ const LoginForm = (props) => {
                     <Input
                         name="id"
                         id="id"
-                        placeholder="Stident Id"
+                        placeholder="Student Id"
                         value={props.query.id} 
                         //the value of this textfield will always showcase the value of props.query.id
                         onChange = {handleChange} //e stands for event, e.target gonna make id, e.value what a changed value is going to be

@@ -46,7 +46,7 @@ const Navbar = (props) => {
                         </Fragment>
 
                     ) :
-                        (<NavButton to="/login" label="Sign in" />)
+                        (<NavButton to="/login" label="Login" />)
                     }
 
                 </div>
